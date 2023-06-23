@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="reset.css"/>
+        <link rel="stylesheet" href="style.css"/>
+        <!-- Regular 400 Luckiest Guy AND Regular 400 Roboto Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Roboto&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link rel="icon" href="images/logo_icon.png">
+        <title>Encriptador</title>
+    </head>
+    <body>
+        <header>
+            <img class="logo-icon" src="images/logo_icon.png" alt="logo encriptador"/>
+            <h1 class="header-title">ENCRIPTADOR DE TEXTO</h1>
+        </header>
+        <main class="main-container">
+            <section>
+                <textarea class="input-text" cols="40" rows="9" placeholder="Ingrese el texto aquí"></textarea>
+                <div class="warning-display">
+                    <ul class="warning-items">
+                        <li>
+                            <img src="images/admiration.png" alt="admiration logo">
+                        </li>
+                        <li>
+                            <h6 class="warning">Solo letras minúsculas y sin acentos</h6>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="enc-dec-btns">
+                        <li>
+                            <button class="encrypt-btn" onclick="encryptButton()">Encriptar</button>
+                        </li>
+                        <li>
+                            <button class="decrypt-btn" onclick="decryptButton()">Desencriptar</button>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section>
+                <ul class="output-container">
+                    <li class="box">
+                        <textarea class="output-text" cols="30" rows="10" readonly></textarea>
+                        <h3 class="message-one">Ningún mensaje fue encontrado</h3>
+                        <h4 class="message-two">Ingrese el texto que desee encriptar o desencriptar.</h4>
+                    </li>
+                    <li>
+                        <button class="copy-btn" onclick="copyButton()">Copiar</button>
+                    </li>
+                </ul>
+            </section>
+        </main>
+        <footer>
+            <h5 class="footer-title">Creado por Cristian Gallegos @polar_byte  © 2023 | Encriptador de texto - Alura Challenges ONE</h5>
+            <nav>
+                <ul class="foo-social-media">
+                    <li>
+                        <a href="https://github.com/CristianRicardoGallegosDiego" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/cristian-ricardo-gallegos-diego-087308212" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
+        <script src="Main.js"></script>
+    </body>
+</html>

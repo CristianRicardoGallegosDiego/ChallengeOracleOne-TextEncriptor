@@ -1,0 +1,247 @@
+:root {
+    --background: #F3F5FC;
+    --dark-background: #0A3871;
+    --greyy: #787680;
+    --greyy-hover: #57565C;
+    --blue-one: #57A4FF;
+    --blue-one-hover: #006DF0;
+    --blue-two: #669999;
+    --blue-two-hover: #326262;
+    --blue-three: #97CACA;
+}
+
+* {
+    background: var(--background);
+    font-family: Roboto, cursive;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+}
+
+/*---------------------------- HEADER ----------------------------*/
+header {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 1em;
+    align-items: center;
+}
+
+.logo-icon {
+    width: 3%;
+    padding: 0.3em 0 0.3em 1%;
+}
+
+.header-title {
+    text-align: center;
+    width: 91.5%;
+    font-weight: bolder;
+    font-family: Roboto, cursive;
+    font-size: 40px;
+    color: var(--greyy-hover);
+}
+
+/*---------------------------- MAIN ----------------------------*/
+.main-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.input-text {
+    resize: none;
+    border: none;
+    color: var(--dark-background);
+}
+
+.input-text::placeholder {
+    color: var(--dark-background);
+}
+
+.input-text:focus {
+    outline: none;
+}
+
+.warning-display .warning-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.warning {
+    padding-left: 0.5em;
+    font-size: 14px;
+    color: var(--greyy);
+    opacity: 0.8;
+}
+
+.enc-dec-btns {
+    display: flex;
+    justify-content: space-around;
+}
+
+.encrypt-btn {
+    background-color: var(--blue-one);
+    border: none;
+    border-radius: 24px;
+    color: white;
+    cursor: pointer;
+    height: 67px;
+    width: 300px;
+}
+
+.encrypt-btn:hover {
+    background-color: var(--blue-one-hover);
+}
+
+.decrypt-btn {
+    background: var(--greyy);
+    border: none;
+    color: white;
+    border-radius: 24px;
+    cursor: pointer;
+    height: 67px;
+    width: 300px;
+}
+
+.decrypt-btn:hover {
+    background-color: var(--greyy-hover);
+}
+
+.output-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.output-container .box {
+    display: block;
+    position: relative;
+}
+
+.output-text {
+    background: white url("images/gears.gif") no-repeat center 10%;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    background-size: 60%;
+    resize: none;
+    border: none;
+    border-radius: 24px;
+    color: var(--blue-two-hover);
+    text-align: start;
+    padding: 0 30px 0 30px;
+}
+
+.output-text:focus {
+    outline: none;
+}
+
+.message-one {
+    display: block;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    background-color: transparent;
+    line-height: 1;
+}
+
+.message-two {
+    display: block;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-weight: lighter;
+    font-size: 14px;
+    background-color: transparent;
+    line-height: 1;
+}
+
+.copy-btn {
+     background-color: var(--blue-two);
+     border: 1px solid var(--blue-two);
+     color: white;
+     border-radius: 24px;
+     cursor: pointer;
+     height: 67px;
+     width: 300px;
+ }
+
+.copy-btn:hover {
+    background-color: var(--blue-two-hover);
+    border: 1px solid var(--blue-two-hover);
+    color: white;
+}
+/*---------------------------- MAIN ----------------------------*/
+
+/*---------------------------- FOOTER ----------------------------*/
+.footer-title {
+    text-align: center;
+    font-family: Roboto, cursive;
+    font-size: 0.8em;
+    font-weight: normal;
+    padding-top: 1.7em;
+    padding-bottom: 0.5em;
+}
+
+.foo-social-media {
+    display: flex;
+    justify-content: space-around;
+    margin-inline: 44%;
+}
+
+footer a {
+    font-size: 2em;
+    color: black;
+}
+
+footer a:hover {
+    color: var(--blue-three);
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    .main-container {
+        align-items: center;
+    }
+
+    .enc-dec-btns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .encrypt-btn {
+        width: 400px;
+        margin-bottom: 5%;
+    }
+
+    .decrypt-btn {
+        width: 400px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 1000px) {
+    .logo-icon {
+        flex-grow: 3;
+    }
+
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .enc-dec-btns {
+        margin-bottom: 10%;
+    }
+
+    .copy-btn {
+        margin-bottom: 10%;
+    }
+
+    .foo-social-media {
+        margin: 0 20% 1% 20%;
+    }
+}

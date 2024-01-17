@@ -1,7 +1,7 @@
 /**
  * @fileOverview Encrypt and Decrypt a text.
  *
- * @version 1.0
+ * @version 1.1
  * @author Cristian Gallegos @polar_byte
  * @copyright cristianga2002@ciencias.unam.mx
  */
@@ -34,13 +34,13 @@ var message = null;
  */
 function encryptButton() {
     let inputText = document.querySelector(".input-text");
-    if (inputText.value === null || inputText.value === "") {
+    if (inputText.value === null || inputText.value === '') {
         resetOutput();
     } else {
-        message = document.querySelector(".output-text");
-        message.value = encrypt(inputText.value);
-        inputText.value = "";
         cleanOutput();
+        message = document.querySelector(".output-text");
+        message.textContent = encrypt(inputText.value);
+        inputText.value = "";
     }
 }
 
@@ -72,7 +72,7 @@ function decryptButton() {
         resetOutput();
     } else {
         message = document.querySelector(".output-text");
-        message.value = decrypt(inputText.value);
+        message.textContent = decrypt(inputText.value);
         inputText.value = "";
         cleanOutput();
     }
@@ -100,8 +100,8 @@ function decrypt(textToDecrypt) {
  * @returns {void} No return value.
  */
 function copyButton () {
-    if (message !== null && message.value !== null) {
-        navigator.clipboard.writeText(message.value);
+    if (message !== null && message.textContent !== null) {
+        navigator.clipboard.writeText(message.textContent);
     }
 }
 
@@ -113,22 +113,15 @@ function copyButton () {
  * @returns {void} No return value.
  */
 function resetOutput() {
-    let message = document.querySelector('.output-text');
-    message.style.background = "white url('images/gears.gif') no-repeat center 10%";
-    message.style.boxShadow = "0px 24px 32px -8px rgba(0, 0, 0, 0.08)";
-    message.style.backgroundSize = "60%";
-    message.style.resize = "none";
-    message.style.textAlign = "center";
-    message.style.border = "none";
-    message.style.borderRadius = "24px";
-
+    let img = document.querySelector('.gears');
     let messageOne = document.querySelector('.message-one');
     let messageTwo = document.querySelector('.message-two');
-    messageOne.style.display = "initial";
-    messageTwo.style.display = "initial";
 
-    message = document.querySelector(".output-text");
-    message.value = null;
+    if (messageOne && messageTwo && img) {
+        messageOne.style.display = "block";
+        messageTwo.style.display = "block";
+        img.style.display = "block";
+    }
 }
 
 /**
@@ -139,9 +132,14 @@ function resetOutput() {
  * @returns {void} No return value.
  */
 function cleanOutput(){
-    message.style.backgroundImage = "none";
+    let outputText = document.querySelector(".output-text");
+    let img = document.querySelector('.gears');
     let messageOne = document.querySelector('.message-one');
     let messageTwo = document.querySelector('.message-two');
-    messageOne.style.display = "none";
-    messageTwo.style.display = "none";
+    if (messageOne && messageTwo && img && outputText) {
+        messageOne.style.display = "none";
+        messageTwo.style.display = "none";
+        img.style.display = "none";
+        outputText.style.overflow= "auto";
+    }
 }

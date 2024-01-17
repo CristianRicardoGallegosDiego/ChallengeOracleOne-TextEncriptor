@@ -11,29 +11,32 @@
 }
 
 * {
-    background: var(--background);
     font-family: Roboto, cursive;
     font-weight: 400;
     font-size: 32px;
     line-height: 150%;
 }
 
+body {
+    background: var(--background);
+}
+
 /*---------------------------- HEADER ----------------------------*/
 header {
     display: flex;
-    justify-content: flex-start;
-    margin-bottom: 1em;
+    box-sizing: border-box;;
+    padding: 2vh 0;
     align-items: center;
 }
 
 .logo-icon {
-    width: 3%;
-    padding: 0.3em 0 0.3em 1%;
+    width: 3vw;
+    margin-left: 3vw;
 }
 
 .header-title {
     text-align: center;
-    width: 91.5%;
+    width: 94vw;
     font-weight: bolder;
     font-family: Roboto, cursive;
     font-size: 40px;
@@ -43,13 +46,23 @@ header {
 /*---------------------------- MAIN ----------------------------*/
 .main-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.messages-container-input {
+    background-color: none;
 }
 
 .input-text {
+    box-sizing: border-box;
     resize: none;
-    border: none;
     color: var(--dark-background);
+    width: 40vw;
+    height: 55vh;
+    padding: 12px 18px;
+    border: none;
+    background: var(--background);
 }
 
 .input-text::placeholder {
@@ -60,10 +73,14 @@ header {
     outline: none;
 }
 
-.warning-display .warning-items {
+.information-container {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+    align-items: center;
+}
+
+.information-container img {
+    width: 20px;
+    height: 20px;
 }
 
 .warning {
@@ -73,19 +90,15 @@ header {
     opacity: 0.8;
 }
 
-.enc-dec-btns {
-    display: flex;
-    justify-content: space-around;
-}
-
 .encrypt-btn {
     background-color: var(--blue-one);
     border: none;
-    border-radius: 24px;
+    border-radius: 1vw;
     color: white;
     cursor: pointer;
-    height: 67px;
-    width: 300px;
+    height: 10vh;
+    width: 18vw;
+    font-size: 2rem;
 }
 
 .encrypt-btn:hover {
@@ -96,37 +109,49 @@ header {
     background: var(--greyy);
     border: none;
     color: white;
-    border-radius: 24px;
+    border-radius: 1vw;
     cursor: pointer;
-    height: 67px;
-    width: 300px;
+    height: 10vh;
+    width: 18vw;
+    font-size: 2rem;
 }
 
 .decrypt-btn:hover {
     background-color: var(--greyy-hover);
 }
 
+.input-btns-container {
+    display: flex;
+    justify-content: space-around;
+}
+
 .output-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.output-container .box {
-    display: block;
-    position: relative;
+    justify-content: center;
 }
 
 .output-text {
-    background: white url("images/gears.gif") no-repeat center 10%;
-    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
-    background-size: 60%;
+    box-sizing: border-box;
+    width: 40vw;
+    height: 60vh;
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.08);
     resize: none;
     border: none;
-    border-radius: 24px;
+    background-color: white;
+    border-radius: 10px;
     color: var(--blue-two-hover);
-    text-align: start;
-    padding: 0 30px 0 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.output-text img {
+    height: 30vh;
+    background-color: transparent;
 }
 
 .output-text:focus {
@@ -134,40 +159,34 @@ header {
 }
 
 .message-one {
-    display: block;
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    padding-top: 5vh;
+    padding-bottom: 1vh;
     text-align: center;
     font-weight: bold;
     font-size: 30px;
-    background-color: transparent;
     line-height: 1;
+    display: block;
 }
 
 .message-two {
-    display: block;
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
     font-weight: lighter;
-    font-size: 14px;
-    background-color: transparent;
+    font-size: 18px;
     line-height: 1;
+    display: block;
 }
 
 .copy-btn {
-     background-color: var(--blue-two);
-     border: 1px solid var(--blue-two);
-     color: white;
-     border-radius: 24px;
-     cursor: pointer;
-     height: 67px;
-     width: 300px;
- }
+    margin-top: 5vh;
+    background-color: var(--blue-two);
+    border: 1px solid var(--blue-two);
+    color: white;
+    border-radius: 1vw;
+    cursor: pointer;
+    height: 10vh;
+    width: 18vw;
+    font-size: 2rem;
+}
 
 .copy-btn:hover {
     background-color: var(--blue-two-hover);
@@ -201,26 +220,95 @@ footer a:hover {
     color: var(--blue-three);
 }
 
-/* Tablets and Mobile phones */
-@media (max-width: 1000px) {
-    .logo-icon {
-        flex-grow: 3;
-    }
-
-    .main-container {
+@media (max-width: 600px) {
+    .input-container {
+        display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .enc-dec-btns {
-        margin-bottom: 10%;
+    header {
+        margin-bottom: 2vh;
+    }
+
+    .logo-icon {
+        width: 10vw;
+    }
+
+    .header-title {
+        font-size: 1.5rem;
+    }
+
+    .main-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .input-text {
+        width: 80vw;
+        height: 35vh;
+    }
+
+    .input-btns-container {
+        flex-direction: column;
+    }
+
+    .output-text {
+        margin-top: 3vh;
+        width: 80vw;
+        height: 30vh;
+    }
+
+    .output-text img {
+        display: none;
+    }
+
+    .encrypt-btn, .decrypt-btn, .copy-btn {
+        width: 80vw;
+        height: 8vh;
+        margin: 1vh 0;
     }
 
     .copy-btn {
-        margin-bottom: 10%;
+        margin-top: 3vh;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1000px) {
+    .main-container {
+        display: flex;
+        flex-direction: column;
     }
 
-    .foo-social-media {
-        margin: 0 20% 1% 20%;
+    .input-text {
+        width: 80vw;
+        height: 25vh;
+    }
+
+    .output-container {
+        margin-top: 5vh;
+    }
+
+    .output-text {
+        width: 80vw;
+        height: 25vh;
+        flex-direction: row;
+    }
+
+    .output-text img  {
+        height: 20vh;
+    }
+
+    .output-text div {
+        width: 40vw;
+    }
+
+    .copy-btn {
+        margin-top: 3vh;
+    }
+
+    .encrypt-btn, .decrypt-btn, .copy-btn {
+        width: 35vw;
+        height: 8vh;
     }
 }

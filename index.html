@@ -22,40 +22,28 @@
             <h1 class="header-title">ENCRIPTADOR DE TEXTO</h1>
         </header>
         <main class="main-container">
-            <section>
-                <textarea class="input-text" cols="40" rows="9" placeholder="Ingrese el texto aquí"></textarea>
-                <div class="warning-display">
-                    <ul class="warning-items">
-                        <li>
-                            <img src="images/admiration.png" alt="admiration logo">
-                        </li>
-                        <li>
-                            <h6 class="warning">Solo letras minúsculas y sin acentos</h6>
-                        </li>
-                    </ul>
-                </div>
+            <section class="input-container">
                 <div>
-                    <ul class="enc-dec-btns">
-                        <li>
-                            <button class="encrypt-btn" onclick="encryptButton()">Encriptar</button>
-                        </li>
-                        <li>
-                            <button class="decrypt-btn" onclick="decryptButton()">Desencriptar</button>
-                        </li>
-                    </ul>
+                    <textarea class="input-text" placeholder="Ingrese el texto aquí"></textarea>
+                </div>
+                <div class="information-container">
+                    <img src="images/admiration.png" alt="admiration logo">
+                    <h6 class="warning">Solo letras minúsculas y sin acentos</h6>
+                </div>
+                <div class="input-btns-container">
+                    <button class="encrypt-btn" onclick="encryptButton()">Encriptar</button>
+                    <button class="decrypt-btn" onclick="decryptButton()">Desencriptar</button>
                 </div>
             </section>
-            <section>
-                <ul class="output-container">
-                    <li class="box">
-                        <textarea class="output-text" cols="30" rows="10" readonly></textarea>
+            <section class="output-container">
+                <div class="output-text">
+                    <img class="gears" src="images/gears.gif" alt="gears gif">
+                    <div class="messages-container-input">
                         <h3 class="message-one">Ningún mensaje fue encontrado</h3>
                         <h4 class="message-two">Ingrese el texto que desee encriptar o desencriptar.</h4>
-                    </li>
-                    <li>
-                        <button class="copy-btn" onclick="copyButton()">Copiar</button>
-                    </li>
-                </ul>
+                    </div>
+                </div>
+                <button class="copy-btn" onclick="copyButton()">Copiar</button>
             </section>
         </main>
         <footer>
